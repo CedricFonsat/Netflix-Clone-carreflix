@@ -1,38 +1,353 @@
+@font-face {
+  font-family: "Bebas";
+  src: url('BebasNeue-Bold.otf');
+  } 
+
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.color {
+  color: #32de84;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a:-webkit-any-link {
+  text-decoration: none !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: black;
+}
+
+:root {
+  --black: #141414;
+  --green: #32de84;
+  --white: #ffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* navbar start */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    transparent
+  );
+  color: var(--white);
+  position: fixed;
+  top: 0;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  list-style-type: none;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+nav h1 img {
+  width: 50px;
+  margin: 0 20px;
+}
+
+nav h1 {
+  display: flex;
+  align-items: center;
+  font-family: 'Bebas';
+}
+
+.btn_login {
+  text-decoration: none;
+  background-color: var(--green);
+  padding: 10px 15px;
+  margin: 0 20px;
+  color: var(--black);
+}
+
+/* navbar end */
+
+/* header start  */
+
+.header img {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  top: 0%;
+  right: 0;
+  z-index: -1;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.header div {
+  text-align: start;
+  color: var(--white);
+  width: 700px;
+  margin: 250px 40px 50px;
+}
+
+.header div p {
+  margin: 10px 0 30px;
+}
+
+.header div a {
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.header div h2 {
+  font-size: 10vmin;
+  color: var(--white);
+}
+
+/* header end */
+
+/* popular movie */
+
+.title_popular_movie {
+  color: var(--white);
+  text-align: start;
+  margin: 40px 0px 5px 50px;
+}
+
+.popular_movie {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 220px;
+  margin: 20px 2px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.ggg {
+  background-color: #32de84;
+}
+
+/* loading start */
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--green);
+}
+
+.loading h1 {
+  font-size: 15vmin;
+}
+
+/* loading end */
+
+/* login start */
+
+.error_login {
+  color: rgb(162, 60, 60);
+  text-align: center;
+}
+
+.login {
+  color: var(--white);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: var(--black);
+  justify-content: center;
+  align-items: center;
+}
+
+.login h1 {
+  margin-bottom: 20px;
+}
+
+.login form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #232222;
+  height: 450px;
+  width: 400px;
+}
+
+.login div {
+  margin: 10px 0;
+}
+
+.textbox {
+  width: 100%;
+  position: relative;
+}
+
+.textbox span {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  translate: 0 -50%;
+  color: var(--white);
+}
+
+.login form input,
+.login form button {
+  height: 50px;
+  outline: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.login form input {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  padding: 0 20px 0 20px;
+  color: inherit;
+  width: 230px;
+}
+
+.login form input:focus {
+  border-color: var(--green);
+}
+.login form input:focus ~ span {
+  color: var(--green);
+}
+
+.login form button {
+  cursor: pointer;
+  background: var(--green);
+  color: #f9f9f9;
+  border: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  width: 275px;
+}
+
+.login form a {
+  color: var(--green);
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+}
+
+/* login end */
+
+/* landing start */
+
+.landing {
   display: flex;
   flex-direction: column;
+  color: white;
+  margin-top: 80px;
+  width: 100%;
+  height: 600px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.landing h1{
+  font-size: 8vmin;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.landing p:nth-child(2){
+  font-size: 2vmin;
 }
+
+.landing_p1{
+  margin: 15px 0 30px 0;
+  font-size: 4vmin;
+}
+
+.landing_register{
+  background-color: #32de84;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.landing_register input{
+  background: var(--white);
+  border: none; 
+  font-size: 16px;
+  padding: 0 0 0 10px;
+  color: black;
+  width: 250px;
+  /* quelque chose */
+  height: 50px;
+  outline: none;
+  font-family: inherit;
+}
+
+.landing_button{
+  height: 100%;
+  padding: 0 15px;
+  border: none;
+  background-color: var(--green);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.landing_background{
+  position: absolute;
+  z-index: -1;
+  background-image: url("https://winbuzzer.com/wp-content/uploads/2019/01/netflix-reuse-official.jpg");
+  opacity: .5;
+  width: 100%;
+  height: 100vh;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 2)),
+    to(rgba(0, 0, 0, 0))
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 2), rgba(0, 0, 0, 0));
+}
+
+/* landing end */
+
+/* search bar ****************************************************/
+
+/* footer start */
+
+footer {
+  width: 100%;
+  height: 100px;
+  color: var(--white);
+}
+
+/* footer end */

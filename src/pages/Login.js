@@ -1,0 +1,68 @@
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const Login = () => {
+
+  //const [login, setLogin] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [noob, setNoob] = useState('');
+  const navigate = useNavigate();
+
+   async function handleSubmit(e) {
+    e.preventDefault();
+    const forms = {
+      email: email,
+      password: password 
+    }
+
+    console.log(forms);
+
+
+
+    axios
+    .post(`https://api-ri7.herokuapp.com/api/users/login`, forms)
+    .then(resp => {
+      console.log("resp => ", resp)
+      if(resp !== ""){
+        console.log("bienvenue");
+        navigate('/browse');
+      }
+    
+    })
+    .catch((error) => {
+      console.log('Error: ', error);
+      setNoob(error);
+    });
+
+
+
+}
+
+ 
+
+
+
+
+  return (
+    <div className="login">
+        <form onSubmit={handleSubmit}>
+        {noob ? <p className="error_login">NOOB t'es pas co</p> : "" } 
+        <h1>Login tes null</h1>
+          <div className="textbox">
+            <input type="email" placeholder="Username" onChange={(e)=> setEmail(e.target.value)} />
+          </div>
+          <div className="textbox">
+            <input type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
+          </div>
+          <button type="submit">LOGIN</button>
+          <Link to="/">
+            <p>Vous avez déjà un compte?</p>
+          </Link>
+        </form>
+    </div>
+  );
+};
+
+export default Login;
