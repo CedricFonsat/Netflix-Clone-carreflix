@@ -27,7 +27,11 @@ const Login = () => {
       console.log("resp => ", resp)
       if(resp !== ""){
         console.log("bienvenue");
+        console.log(resp.data.token);
         navigate('/browse');
+
+        const token = resp.data.token;
+        sessionStorage.setItem('token',token);
       }
     
     })

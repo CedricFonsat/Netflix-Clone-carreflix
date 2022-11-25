@@ -3,6 +3,18 @@ import NavBar from '../Components/NavBar'
 import Button from '../Components/Button'
 
 const Landing = () => {
+
+// const HandleClick = () => {
+//     const token = sessionStorage.getItem('token');
+//     console.log(token);
+
+//     if (token) {
+//         console.log("gggggg");
+//     }else{
+//         console.log('noob');
+//     }
+// }
+
   return (
     <div>
         <NavBar/>
@@ -15,6 +27,7 @@ const Landing = () => {
             <input type="text" />
             <Button name="Commencer &#x2794; " className="landing_button"/>
         </div>
+        {/* <button onClick={HandleClick}>click</button> */}
         </div>
     </div>
   )
