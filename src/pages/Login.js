@@ -52,6 +52,7 @@ const Login = () => {
   return (
     <div className="login">
         <form onSubmit={handleSubmit}>
+     {noob ? <p className="error_login">NOOB t'es pas co</p> : "" } 
         <h1>Login tes null</h1>
           <div className="textbox">
             <input type="email" placeholder="Username" onChange={(e)=> setEmail(e.target.value)} />
