@@ -19,28 +19,29 @@ const Login = () => {
 
     console.log(forms);
 
-
-
-    axios
-    .post(`http://localhost:3000/api/auth/signin`, forms)
-    .then(resp => {
-      console.log("resp => ", resp)
-      if(resp !== ""){
-        console.log("bienvenue");
-        console.log(resp.data.token);
-        navigate('/browse');
-
-        const token = resp.data.token;
+const token = "token";
         sessionStorage.setItem('token',token);
-      }
-    
-    })
-    .catch((error) => {
-      console.log('Error: ', error);
-      setNoob(error);
-    });
 
 
+
+// axios
+// .post(`http://localhost:3000/api/auth/signin`, forms)
+// .then(resp => {
+//   console.log("resp => ", resp)
+//   if(resp !== ""){
+//     console.log("bienvenue");
+//     console.log(resp.data.token);
+//     navigate('/browse');
+
+//     const token = resp.data.token;
+//     sessionStorage.setItem('token',token);
+//   }
+
+// })
+// .catch((error) => {
+// console.log('Error: ', error);
+// setNoob(error);
+// });
 
 }
 
