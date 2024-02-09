@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+nimport React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
 
   //const [login, setLogin] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [noob, setNoob] = useState('');
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Login = () => {
    async function handleSubmit(e) {
     e.preventDefault();
     const forms = {
-      email: email,
+      username: username,
       password: password 
     }
 
@@ -55,7 +55,7 @@ const Login = () => {
      {noob ? <p className="error_login">NOOB t'es pas co</p> : "" } 
         <h1>Login tes null</h1>
           <div className="textbox">
-            <input type="email" placeholder="Username" onChange={(e)=> setEmail(e.target.value)} />
+            <input type="text" placeholder="Username" onChange={(e)=> setUsername(e.target.value)} />
           </div>
           <div className="textbox">
             <input type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
