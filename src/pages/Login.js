@@ -20,7 +20,13 @@ const Login = () => {
     console.log(forms);
 
 const token = "token";
+
+     if(token != ""){
         sessionStorage.setItem('token',token);
+       navigate('/browse');
+     }else{
+       setNoob("t'es noob");
+     }
 
 
 
